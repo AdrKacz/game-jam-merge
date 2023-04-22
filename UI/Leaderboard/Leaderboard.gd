@@ -14,10 +14,10 @@ func _ready():
 	# Get the leaderboard from ddb
 	NetworkManager.connect("scan", Callable(self, "_on_NetworkManager_scan"))
 	NetworkManager.start_scan()
-	$Path2D/AnimationPlayer.play("spinner")
+	$MarginContainer/VBoxContainer/Panel/Control/LoadingPath/AnimationPlayer.play("spinner")
 	
 func _on_NetworkManager_scan(scores):
-	$Path2D.visible = false
+	$MarginContainer/VBoxContainer/Panel/Control/LoadingPath.visible = false
 	
 	scores.sort_custom(Callable(MyCustomSorter, "sort_ascending"))
 	var i = 1

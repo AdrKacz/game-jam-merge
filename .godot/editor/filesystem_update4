@@ -1,10 +1,9 @@
 res://default_env.tres
-res://Game/GameIntro.tscn
-res://AutoLoad/SoundManager/SoundManager.tscn
-res://UI/SoundInterface/SoundInterface.tscn
-res://AutoLoad/SoundManager/SoundManager.gd
 res://UI/MainMenu/MainMenu.tscn
-res://UI/SoundInterface/SoundInterface.gd
-res://Game/GameMaster.tscn
-res://AutoLoad/Constants/constants.gd
-res://UI/PauseInterface/PauseInterface.gd
+res://ExternalVisuals/MainScreen.tscn
+res://ExternalVisuals/BackgroundMain.tscn
+res://UI/MainMenu/MainMenu.gd
+res://UI/Leaderboard/Leaderboard.tscn
+res://ExternalVisuals/MenuBackground.tscn
+res://UI/Leaderboard/LoadingPath.gd
+res://UI/Leaderboard/Leaderboard.gd
