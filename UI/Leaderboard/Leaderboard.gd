@@ -8,14 +8,17 @@ class MyCustomSorter:
 			return true
 		return false
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
+	await get_tree().process_frame # wait to have size working
+	# Place spinner in the middle
+	print(size, $MarginContainer/VBoxContainer/Panel/Control.size)
+	$MarginContainer/VBoxContainer/Panel/Control/LoadingPath.position = $MarginContainer/VBoxContainer/Panel/Control.size / 2
 	# Get the leaderboard from ddb
 	NetworkManager.connect("scan", Callable(self, "_on_NetworkManager_scan"))
 	NetworkManager.start_scan()
 	$MarginContainer/VBoxContainer/Panel/Control/LoadingPath/AnimationPlayer.play("spinner")
-	
+
 func _on_NetworkManager_scan(scores):
 	$MarginContainer/VBoxContainer/Panel/Control/LoadingPath.visible = false
 	

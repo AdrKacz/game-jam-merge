@@ -1,8 +1,8 @@
+MarginContainer
+Control
 CenterContainer
 ColorRect
-Control
 Node
 Container
-MarginContainer
 VBoxContainer
 VSplitContainer

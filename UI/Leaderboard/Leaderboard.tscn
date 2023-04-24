@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://cb7cnilm5shk8" path="res://assets/ButtonsV3/SmallButtonDown.png" id="3"]
 [ext_resource type="PackedScene" uid="uid://cp0b2g6ma20cv" path="res://ExternalVisuals/MenuBackground.tscn" id="3_rwy00"]
 [ext_resource type="FontFile" uid="uid://dawfg0re1svew" path="res://assets/VT323/VT323-Regular.ttf" id="4"]
-[ext_resource type="Script" path="res://UI/Leaderboard/LoadingPath.gd" id="4_00c3n"]
+[ext_resource type="Script" path="res://UI/SafeControl/safe_control.gd" id="4_7axui"]
 [ext_resource type="Texture2D" uid="uid://xfa1vu6ckvuw" path="res://assets/ButtonsV3/SmallButtonUp.png" id="6"]
 
 [sub_resource type="GDScript" id="GDScript_i0y2b"]
@@ -152,9 +152,10 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 theme_override_constants/margin_left = 12
-theme_override_constants/margin_top = 48
+theme_override_constants/margin_top = 12
 theme_override_constants/margin_right = 12
-theme_override_constants/margin_bottom = 24
+theme_override_constants/margin_bottom = 12
+script = ExtResource("4_7axui")
 
 [node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer"]
 layout_mode = 2
@@ -234,15 +235,16 @@ size_flags_vertical = 3
 theme_override_constants/separation = 16
 
 [node name="Control" type="Control" parent="MarginContainer/VBoxContainer/Panel"]
-layout_mode = 2
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
 
 [node name="LoadingPath" type="Path2D" parent="MarginContainer/VBoxContainer/Panel/Control"]
 scale = Vector2(2, 2)
 curve = SubResource("14")
-script = ExtResource("4_00c3n")
 
 [node name="PathFollow2D" type="PathFollow2D" parent="MarginContainer/VBoxContainer/Panel/Control/LoadingPath"]
 position = Vector2(0, -32)
