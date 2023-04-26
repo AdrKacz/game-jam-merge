@@ -13,3 +13,4 @@ res://Scenes/Character/Character.tscn
 res://Scenes/Hearts/Heart/Heart.tscn
 res://Scenes/Hearts/Hearts.gd
 res://Game/GameMaster.gd
+res://Scenes/Hearts/Heart/Heart.gd

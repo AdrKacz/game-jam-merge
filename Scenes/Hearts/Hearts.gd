@@ -13,6 +13,7 @@ func lose_heart():
 	if empty_heart >= get_child_count():
 		print('Cannot lose an heart')
 		return
+	get_child(empty_heart).pulse()
 	get_child(empty_heart).frame = Status.EMPTY
 	empty_heart += 1
 	
@@ -21,4 +22,5 @@ func earn_heart():
 		print('Cannot earn an heart')
 		return
 	empty_heart -= 1
+	get_child(empty_heart).pulse()
 	get_child(empty_heart).frame = Status.FULL
