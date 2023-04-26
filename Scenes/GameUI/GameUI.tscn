@@ -3,8 +3,8 @@
 [ext_resource type="Script" path="res://Scenes/GameUI/GameUI.gd" id="1_1j4ix"]
 [ext_resource type="Script" path="res://UI/SafeControl/safe_control.gd" id="1_42cip"]
 [ext_resource type="PackedScene" uid="uid://bkyi6nop5h5e7" path="res://Scenes/BonusText/BonusText.tscn" id="2_2t8mw"]
-[ext_resource type="FontFile" uid="uid://dawfg0re1svew" path="res://assets/VT323/VT323-Regular.ttf" id="3_6bxme"]
 [ext_resource type="Texture2D" uid="uid://4x328o3ivuls" path="res://assets/pause.png" id="5_m0cpc"]
+[ext_resource type="PackedScene" uid="uid://belmo1q5j7eh" path="res://Scenes/ScoreText/ScoreText.tscn" id="5_y8wyq"]
 
 [node name="GameUI" type="Control"]
 layout_mode = 3
@@ -16,6 +16,8 @@ grow_vertical = 2
 mouse_filter = 1
 script = ExtResource("1_1j4ix")
 BonusText = ExtResource("2_2t8mw")
+
+[node name="ScoreText" parent="." instance=ExtResource("5_y8wyq")]
 
 [node name="MarginContainer" type="MarginContainer" parent="."]
 layout_mode = 1
@@ -47,19 +49,5 @@ layout_mode = 2
 texture_normal = ExtResource("5_m0cpc")
 texture_pressed = ExtResource("5_m0cpc")
 texture_hover = ExtResource("5_m0cpc")
-
-[node name="ScoreMarginContainer" type="MarginContainer" parent="MarginContainer"]
-layout_mode = 2
-size_flags_vertical = 0
-mouse_filter = 2
-
-[node name="Label" type="Label" parent="MarginContainer/ScoreMarginContainer"]
-layout_mode = 2
-theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
-theme_override_constants/outline_size = 12
-theme_override_fonts/font = ExtResource("3_6bxme")
-theme_override_font_sizes/font_size = 96
-text = "328"
-horizontal_alignment = 1
 
 [connection signal="pressed" from="MarginContainer/PauseControl/MarginContainer/TextureButton" to="." method="_on_pause_button_pressed"]

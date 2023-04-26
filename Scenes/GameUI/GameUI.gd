@@ -6,12 +6,28 @@ var display_bonus_text_position: Vector2
 
 func _ready():
 	# get position for bonus text
-	var area_size: Vector2 = $MarginContainer.get_parent_area_size()
-	display_bonus_text_position = Vector2(
-		area_size.x * .5,
-		area_size.y * .8
+	$ScoreText.text = str(Constants.score)
+	
+	
+	var computed_safe_area: Rect2 = $MarginContainer.computed_safe_area
+	$ScoreText.position = Vector2(
+		computed_safe_area.position.x + computed_safe_area.size.x * .5,
+		computed_safe_area.position.y + 96,
 	)
-	$MarginContainer/ScoreMarginContainer/Label.text = str(Constants.score)
+	display_bonus_text_position = Vector2(
+		computed_safe_area.position.x + computed_safe_area.size.x * .5,
+		computed_safe_area.position.y + computed_safe_area.size.y * .8,
+	)
+	
+	print('SAFE AREA: ', DisplayServer.get_display_safe_area())
+	print('COMPUTED SAFE AREA: ', computed_safe_area)
+	print('PARENT AREA SIZE: ', $MarginContainer.get_parent_area_size())
+	print('SCORE TEXT POSITION: ', $ScoreText.position)
+	print('DISPLAY BONUS TEXT POSITION: ', display_bonus_text_position)
+	
+func _input(event):
+	if event is InputEventKey and event.keycode == KEY_SPACE and event.is_pressed() and not event.is_echo():
+		$ScoreText.pulse()
 
 func _on_pause_button_pressed():
 	SoundManager.play_click()
@@ -19,8 +35,9 @@ func _on_pause_button_pressed():
 	Session.pause_with_opacity()
 	
 func update_score(score):
-	$MarginContainer/ScoreMarginContainer/Label.text = str(score)
-	
+	$ScoreText.text = str(score)
+	$ScoreText.pulse()
+
 func display_bonus_text(text):
 	# TODO: text display on top of each other sometime, rethink the position and/or the animation
 	var bonus_text = BonusText.instantiate()

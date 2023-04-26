@@ -1,12 +1,10 @@
 res://default_env.tres
+res://Scenes/ScoreText/ScoreText.tscn
+res://Scenes/GameUI/GameUI.tscn
+res://Scenes/ScoreText/ScoreText.gd
 res://UI/Leaderboard/Leaderboard.tscn
 res://Game/GameMaster.tscn
 res://Game/Game.tscn
 res://Scenes/BonusText/BonusText.tscn
-res://AutoLoad/StateManager/StateManager.gd
-res://Scenes/GameUI/GameUI.tscn
-res://UI/PauseInterface/PauseInterface.tscn
 res://Scenes/GameUI/GameUI.gd
-res://Game/GameMaster.gd
-res://Game/Game.gd
-res://UI/LoseMenu/LoseMenu.tscn
+res://UI/SafeControl/safe_control.gd
