@@ -1,8 +1,11 @@
 res://default_env.tres
-res://Scenes/BonusText/BonusText.tscn
+res://UI/MainMenu/MainMenu.tscn
+res://UI/MainMenu/MainMenu.gd
 res://UI/Leaderboard/Leaderboard.tscn
 res://Game/GameMaster.tscn
 res://Shaders/Shockwave.tscn
 res://Scenes/Character/Character.tscn
 res://Scenes/GameUI/GameUI.tscn
 res://Game/Game.tscn
+res://Scenes/BonusText/BonusText.tscn
+res://Scenes/Menus/Settings/Settings.tscn
