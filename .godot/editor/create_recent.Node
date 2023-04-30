@@ -1,3 +1,4 @@
+Node
 CheckBox
 Label
 VBoxContainer
@@ -15,5 +16,4 @@ Node2D
 TextureButton
 Button
 Timer
-Node
 VSplitContainer
