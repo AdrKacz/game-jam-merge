@@ -19,5 +19,8 @@ var sound_effects_on: bool = true:
 		sound_effects_on = value
 		AudioServer.set_bus_mute(2, not sound_effects_on)
 
+func _ready():
+	music_on = false
+
 func play_sound_effects(index):
 	$SoundEffects.get_child(index).play()
